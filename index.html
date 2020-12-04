@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Maze game</title>
+    <title>Maze</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .hidden {
+            display: none !important;
+        }
+        h1{
+            color: white;
+            font-size: 40px;
+        }
+        .winner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            height: 100vh;
+            width: 100vw;
+        }
+        .start-screen{
+            margin-top: 20px;
+        }
+
+        h2{
+            color: black;
+            font-size: 40px !important;
+        }
+
+    </style>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
+  />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
 </head>
 <body>
+    <div class="has-text-centered" style="margin: 20px 0 20px 0">
+        <h2>Please select your maze dimensions</h2>
+        <label>Width</label>
+        <input id="width" type="number" max="20" min="0">
+
+        <label>Height</label>
+        <input id="height" type="number" max="20" min="0">
+        <button class="button is-primary is-small" style="margin-left: 10px" type="button">Maze me, Bro.</button>
+        <p>Controls:
+            w: up,
+            d: right,
+            s: down,
+            a: left,
+        </h3>
+    </div>
+    <div class="winner hidden">
+        <h1>Winner, winner!</h1>
+        <button class="button is-danger" style="margin-left: 10px" type="button">Play again?</button>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
